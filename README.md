@@ -2,9 +2,9 @@
 SCREEENSHOT :-
 https://anonfiles.com/XeV3hfE3od/owasp_PNG
 
-Automated Attacks on Commercial Sites begin to grow each day with high metrics.
-This project is a remodelling of one of those attacks.
-I used Burpsuite to capture the Response but you'r better off using the browser's integrated Inspect Mode !
+Automated Attack Vectors on Commercial Sites begin to grow each day with high metrics.
+This project is a re-modelling of one of those attacks.
+I used Burpsuite to capture the response but you'r better off using the browser's integrated Inspect Mode !
 
 
 Variables Listing :-
