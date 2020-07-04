@@ -12,7 +12,7 @@ $cc = card
 $mes = month
 $ano = year
 $cvv = cvv
-$token = Site relative CSRF/other tokens
+$token = Site's relative CSRF/other tokens
 
 Usage :-
 Extract the master files on C://xampp/htdocs/{foldername}
