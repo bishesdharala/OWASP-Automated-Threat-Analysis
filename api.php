@@ -296,5 +296,5 @@ else {
 
 curl_close($ch);
 //echo $result;        Just uncomment this command to view detailed server response
-ob_flush();
+ob_flush();              //Clean Dem OB Cache ..Saves memory !!
 ?>
