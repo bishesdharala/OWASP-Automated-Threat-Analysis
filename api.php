@@ -22,10 +22,10 @@ $poxySocks4 = bishesproxys();  // Proxy function definition to be used later
 
 
 $lista = $_GET['lista'];  //Abstract the various parameters listing
-$cc = multiexplode(array(":", "|", ""), $lista)[0];
-$mes = multiexplode(array(":", "|", ""), $lista)[1];
-$ano = multiexplode(array(":", "|", ""), $lista)[2];
-$cvv = multiexplode(array(":", "|", ""), $lista)[3];
+$enum_1 = multiexplode(array(":", "|", ""), $lista)[0];
+$enum_2 = multiexplode(array(":", "|", ""), $lista)[1];
+$enum_3 = multiexplode(array(":", "|", ""), $lista)[2];
+$enum_4 = multiexplode(array(":", "|", ""), $lista)[3];
 
 function GetStr($string, $start, $end)
 {
@@ -171,127 +171,12 @@ echo "<font class='badge badge-secondary'> Bishes☢⚠☣ </font>";
 
 //          <<------------------------------Server Auth or Charge Response------------------------>>
 
-if(strpos($result, '"cvc_check": "pass"')){
+if(strpos($result, 'Transaction Succeded')){
 
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>CVV MATCHED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-
+  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $enum_1|$enum_2|$enum_3|$enum_4 <font size=5 color='green'><font class='badge badge-success'>CVV MATCHED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
   }
-  elseif(strpos($result, "Thank You For Donation." )) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>CVV MATCHED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "Thank You." )) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>SUCCESS CHARGED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result,'"status": "succeeded"')){
-      echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>SUCCESSFULLY CHARGED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, 'Your card zip code is incorrect.' )) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>CVV - INCORRECT ZIP</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "incorrect_zip" )) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>CVV - INCORRECT ZIP</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "Success" )) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>SUCCESSFULY CHARGED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "succeeded." )) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>SUCCESSFULLY CHARGED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result,'"type":"one-time"')){
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>CVV MATCHED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, 'Your card has insufficient funds.')) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>INSUFFICIENT FUNDS</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "insufficient_funds")) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-success'>INSUFFICIENT FUNDS</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "lost_card" )) {
-  echo "<font size=5 color='green'><font class='badge badge-warning'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-warning'>LOST CARD</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "stolen_card" )) {
-  echo "<font size=5 color='green'><font class='badge badge-warning'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-warning'>STOLEN CARD</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "Your card's security code is incorrect.")) {
-  echo "<font size=5 color='green'><font class='badge badge-light'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-light'>CCN MATCHED</i></font> <font class='badge badge-light'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "incorrect_cvc" )) {
-  echo "<font size=5 color='green'><font class='badge badge-success'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-light'>CCN MATCHED</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, "pickup_card" )) {
-  echo "<font size=5 color='green'><font class='badge badge-warning'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='green'><font class='badge badge-warning'>STOLEN OR LOST</i></font> <font class='badge badge-green'>[Info: RESPECT bitch !]</i></font><br>";
-  }
-  elseif(strpos($result, 'Your card has expired.' )) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>CARD EXPIRED</i></font><br>";
-  }
-  elseif(strpos($result, "expired_card" )) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>CARD EXPIRED</i></font><br>";
-  }
-  elseif(strpos($result, 'Your card number is incorrect.')) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>INCORRECT CARD NUMBER</i></font><br>";
-  }
-  elseif(strpos($result, "incorrect_number")) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>INCORRECT CARD NUMBER</i></font><br>";
-  }
-  elseif(strpos($result, "service_not_allowed")) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>SERVICE NOT ALLOWED</i></font><br>";
-  }
-  elseif(strpos($result, "do_not_honor")) {
-  echo "<font size=5 color='green'><font class='badge badge-warning'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-warning'>DO NOT HONOR</i></font><br>";
-  }
-  elseif(strpos($result, "generic_decline")) {
-  echo "<font size=5 color='green'><font class='badge badge-warning'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-warning'>GENERIC DECLINED</i></font><br>";
-  }
-  elseif(strpos($result, 'Your card was declined.')) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>CARD DECLINED</i></font><br>";
-  }
-  elseif(strpos($result, "generic_decline")) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>GENERIC DECLINED</i></font><br>";
-  }
-  elseif(strpos($result, '"cvc_check": "unchecked"')) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>CVC UNCHECKED BEWARE !! !!!</i></font><br>";
-  }
-  elseif(strpos($result, '"cvc_check": "unavailable"')) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>CVC UNCHECKED BEWARE !! !!!</i></font><br>";
-  }
-  elseif(strpos($result,'"cvc_check": "fail"')){
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-warning'>CVC_CHECKED : Fail</i></font><br>";
-  }
-  elseif(strpos($result,"parameter_invalid_empty")){
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>MISSING CARD DETAIL</i></font><br>";
-  }
-  elseif(strpos($result,"lock_timeout")){
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-warning'>CARD NOT CHECK</i></font><br>";
-  }
-  elseif (strpos($result, 'Your card does not support this type of purchase.')) {
-  echo "<font size=5 color='green'><font class='badge badge-red'>Aprovada OWASP❌ <i class='zmdi zmdi-check'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-brown'>CARD NOT SUPPORTED</i></font><br>";
-  }
-  elseif(strpos($result,"transaction_not_allowed")){
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>CARD NOT SUPPORTED</i></font><br>";
-  }
-  elseif(strpos($result,"three_d_secure_redirect")){
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>CARD NOT SUPPORTED</i></font><br>";
-  }
-  elseif(strpos($result, 'Card is declined by your bank, please contact them for additional primaryrmation.')) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>3D SECURED</i></font><br>";
-  }
-  elseif(strpos($result,"missing_payment_primaryrmation")){
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>MISSING PAYMENT PRIMARYRMATION</i></font><br>";
-  }
-  elseif(strpos($result, "Payment cannot be processed, missing credit card number")) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>MISSING CREDIT CARD NUMBER</i></font><br>";
-}
-elseif(strpos($result, "card_not_supported")) {
-  echo "<font size=5 color='green'><font class='badge badge-warning'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-warning'>CARD NOT SUPPORTED</i></font><br>";
-}
-elseif(strpos($result, 'Your card is not supported.')) {
-  echo "<font size=5 color='green'><font class='badge badge-warning'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-warning'>CARD NOT SUPPORTED</i></font><br>";
-}
-elseif(strpos($result, 'fraudulent')) {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>Fraudulent</i></font><br>";
-}
 else {
-  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $cc|$mes|$ano|$cvv <font size=5 color='red'><font class='badge badge-danger'>Server Failure/Error Not Listed</i></font><br>";
+  echo "<font size=5 color='green'><font class='badge badge-danger'>Reprovada OWASP❌ <i class='zmdi zmdi-close'></i></font> $enum_1|$enum_2|$enum_3|$enum_4 <font size=5 color='red'><font class='badge badge-danger'>Error Code : $result</i></font><br>";
 }
 
 curl_close($ch);
