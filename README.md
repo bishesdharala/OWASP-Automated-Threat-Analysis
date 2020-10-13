@@ -1,6 +1,6 @@
 # OWASP-Automated-Threat-Analysis
 SCREEENSHOT :-
-https://anonfiles.com/XeV3hfE3od/owasp_PNG
+https://anonfiles.com/xfn2b1f9pd/Capture_PNG
 
 Automated Attack Vectors on all sorts of sites begin to grow each day with high metrics.
 This project is a re-modelling of one of those botified attacks.
